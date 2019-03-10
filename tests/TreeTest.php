@@ -7,44 +7,44 @@ use Angle\Tree\Leaf;
 class TreeTest extends TestCase
 {
     /** @var Leaf */
-    public $node;
+    public $tree;
 
     public function setUp()
     {
-        $this->node = new Leaf(10);
-        $this->node->insert(5);
-        $this->node->insert(15);
-        $this->node->insert(8);
+        $this->tree = new Leaf(10);
+        $this->tree->insert(5);
+        $this->tree->insert(15);
+        $this->tree->insert(8);
 
-        return $this->node;
+        return $this->tree;
     }
 
     /** @test */
     public function valuesAreInsertedProperly()
     {
-        $this->assertTrue($this->node->left->data == 5);
-        $this->assertTrue($this->node->right->data == 15);
-        $this->assertTrue($this->node->left->right->data == 8);
+        $this->assertTrue($this->tree->left->data == 5);
+        $this->assertTrue($this->tree->right->data == 15);
+        $this->assertTrue($this->tree->left->right->data == 8);
     }
 
     /** @test **/
     public function weCanVerifyThatTreeContainsValue()
     {
-        $this->assertTrue($this->node->contains(5));
-        $this->assertTrue($this->node->contains(15));
-        $this->assertTrue($this->node->contains(8));
+        $this->assertTrue($this->tree->contains(5));
+        $this->assertTrue($this->tree->contains(15));
+        $this->assertTrue($this->tree->contains(8));
     }
 
     /** @test **/
     public function weCanVerifyThatTreeDoesntContainUnexpectedValues()
     {
-        $this->assertFalse($this->node->contains(42));
+        $this->assertFalse($this->tree->contains(42));
     }
 
     /** @test **/
     public function printInOrder()
     {
-        $this->node->print();
+        $this->tree->print();
 
         $this->expectOutputString('5 8 10 15 ');
     }
