@@ -1,4 +1,4 @@
-# Tree
+# 🌳 Tree
 
 Simple binary tree implementation in PHP.
 
