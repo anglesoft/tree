@@ -1,5 +1,5 @@
 {
-    "name": "angle/leaf",
+    "name": "angle/tree",
     "description": "Basic binary tree implementation in PHP.",
     "type": "library",
     "license": "MIT",
