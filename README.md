@@ -7,16 +7,16 @@ Simple binary tree implementation in PHP.
 ```php
 <?php
 
-    use Angle\Tree\Node;
+    use Angle\Tree\Leaf;
 
-    $node = new Node(10);
-    $node->insert(5);
-    $node->insert(15);
-    $node->insert(8);
+    $tree = new Leaf(10);
+    $tree->insert(5);
+    $tree->insert(15);
+    $tree->insert(8);
 
-    $node->contains(5); // true
-    $node->contains(42); // false
+    $tree->contains(5); // true
+    $tree->contains(42); // false
 
-    $node->left->right->data == 8; // true
+    $tree->left->right->data == 8; // true
 
 ```
